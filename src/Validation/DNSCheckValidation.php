@@ -116,7 +116,7 @@ class DNSCheckValidation implements EmailValidation
     {
         // Get all MX, A and AAAA DNS records for host
         // Using @ as workaround to fix https://bugs.php.net/bug.php?id=73149
-        $dnsRecords = @dns_get_record($host, DNS_MX);
+        $dnsRecords = @dns_get_record($host, DNS_MX + DNS_A);
 
 
         // No MX, A or AAAA DNS records
